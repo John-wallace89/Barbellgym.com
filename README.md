@@ -1,108 +1,135 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 style="text-align: center">The Barbellgym.com </h1>
 
-Welcome USER_NAME,
+![hero image screenshot]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+This is my submission for Milestone project 4 for Code Institute. The Barbellgym.com is a site for existing and new members of the Barbell Gym to
+get information, purchase merchandise and send enquiries on classes and personal training. The goal for this site is to be used to generate income
+for the owner of the Barbell Gym and a 'one stop shop' for all new an existing members. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Live project: []
 
-## Gitpod Reminders
+### User Experience (UX) ###
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* User Story 1 - As a customer, I land on the hompeage of the site and It's clear what the business is.
+* User Story 2 - As a customer I can navigate easily to any section of the site regardless of where I am or what device I am using.s
+* User Story 3 - As a vustomer I can easily access the Contact Us page and social media channels through the Footer of the page.
+* User Story 4 - As the business owner, I provide customers with a clear and consistent UX in-keeping with the Barbell Gym brand.
+* User Story 5 - As a user, I can easily access the different products available from the Barbell shop.
+* User Story 6 - As a user, if applicable, I can choose the colour and size of my product before adding to the basket.
+* User Story 7 - As a user, I am notified when I have successfully added a product to the basket and the quantity of products added is shown next to the basket icon.
+* User Story 8  - As a user I can submit my enquiry about a class or PT session.
+* User Story 9 - As an Admin/Superuser I can edit or delete a product.
+* User Story 10 - As a customer, when I go to the basket page I can see the the products I have added to basket and overall total of my order.
+* User Story 11 - As a customer I can remove a specific item from my basket.
+* User Story 12 - As a customer I can adjust the quantity of specific items in my cart.
+* User Story 13 - As a customer I can remove all items from my basket with one click.
+* User Story 14 - As a customer, I can proceed to the checkout page from the basket review page.
+* User Story 15 - As a customer I can choose to save my payment details for next time I make an order.
+* User Story 16 - As a customer, through the contact us page I can access the business'  social media accounts and their location on google maps.
+* User Story 17 - As a user, I can sign into my account which gives me access to my order history and payment details.
+* User Story 18 - As a user, If i'm not signed up I can register for an account.
+* User Story 19 - As a customer when I am signed in, I can access my order history, and see my previous orders.
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+### Design ###
 
-Another blue button should appear to click: _Open Browser_.
+* Colour scheme - The colour scheme is black and white matching the brand and ethos of the business.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* Typography - the 'Big Shoulders Stencil Text' font is used as it is bold, easy to read and suits the military old school
+feel of the brand.
 
-A blue button should appear to click: _Make Public_,
+* Imagery - The Barbell Gym logo is shown throughout the site to draw attention as the business' distinctive feature. Background images include images
+from the gym and classes to provide an insight to users of what the gym looks like, can be seen throughout various pages of the site. Images of the products
+were used to show what the products looked like.
 
-Another blue button should appear to click: _Open Browser_.
+* WireFrames:
+Desktop and Mobile wireframes - [https://marvelapp.com/prototype/2c593h96]
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* Entity relationship diagram
 
-To log into the Heroku toolbelt CLI:
+![Barbell planner db diagram]()
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+*insert data relationship description here*
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* Features:
+    * Responsive layout on mobile and tablet
+    * Collapsible nav bar for mobile view
+    * Collapsible menu for displaying logged workouts
+    * Authentication (Login/Register functionality)
+    * Search
+    * Defensive programming
 
-------
+### Technologies: ###
 
-## Release History
+* Languages - 
+HTML5
+CSS3
+JS
+Python
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* Frameworks/libraries/programs - 
+  https://favicon.io/favicon-converter/ - Used to create logo for title.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+  https://fonts.google.com/ - used for font design.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  https://www.rawpixel.com/image/2337562/free-illustration-png-frame-black-texture - Used for background image.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+  Flask App - https://flask.palletsprojects.com/en/2.0.x/ to run site on and use of Jinja templating and Werkzeug functionality.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+  Materialize CSS - https://materializecss.com/ Used for responsiveness and design of site,
+  used to implement responsive header, footer and collapsible menu.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+  Heroku - https://www.heroku.com/ cloud based platform used to deploy the Barbell planner.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+  Free formatter - https://www.freeformatter.com/css-beautifier.html used to beautify CSS3 code.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+  W3C markup Validator - https://validator.w3.org/ to check HTML formatting.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+  JS Hint - https://jshint.com/ - to test JQuery formatting.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+  db diagram - https://dbdiagram.io/ - to create entity relationship diagram
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+  
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Testing
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* [W3C Markup validator](https://validator.w3.org/#validate_by_input)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* [W3C CSS validator](https://jigsaw.w3.org/css-validator/validator)
 
-------
+* [JSHint](https://jshint.com/)
 
-## FAQ about the uptime script
+* [PEP8 online](http://pep8online.com/checkresult)
 
-**Why have you added this script?**
+### Testing user stories ###
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Further testing ###
+     
 
-**So….?**
+* Bugs:
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
 
-**Can I opt out?**
+* Potential enhancements:
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+<h2 style="text-align: center">Deployment</h2>
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+### Credits
 
-Happy coding!
+### Code ###
+
+
+### Content ###
+
+
+#### Image credits ####
+
+### Acknowledgements ###
