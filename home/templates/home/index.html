@@ -1,6 +1,37 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <h1 class="display-4 text-success">Good to go</h1>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col my-auto">
+                <h1 class="display-3 title-class">Welcome to the Wolf Pit</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <h4>
+                    <a href="" class="nav-button btn btn-ls rounded-0 text-uppercase py-3">Shop Now</a>
+                </h4>
+            </div>
+            <div class="col-12 col-sm-6">
+                <h4>
+                    <a href="" class="nav-button btn btn-ls rounded-0 text-uppercase py-3">Find out more</a>
+                </h4>
+            </div>
+        </div>
+    </div>
 {% endblock %}
