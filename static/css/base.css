@@ -28,6 +28,15 @@ h6 {
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
+    color: #fafafa;
+}
+
+.logo-class {
+    text-transform: uppercase;
+    color: #fafafa;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    word-spacing: 10px;
 }
 
 .title-class {
@@ -47,7 +56,7 @@ h6 {
 }
 
 .btn-black {
-    background: black;
+    background: #222;
     color: white;
 }
 
@@ -57,8 +66,8 @@ h6 {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
+    background: #fafafa;
+    color: black;
 }
 
 .text-white {

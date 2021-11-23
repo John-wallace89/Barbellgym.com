@@ -37,12 +37,15 @@
   <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-dark pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 text-center">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <img src="/media/bb_logo2.png" alt="Barbell gym logo" style="max-height: 150px; max-width: 150px; text-align: center;">
+                    <img src="/media/bb_logo2.png" alt="Barbell gym logo" style="max-height: 100px; max-width: 100px; text-align: center;">
                 </a>
             </div>
-            <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-">
+                <h1 class="logo-class">The Barbell Gym</h1>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -81,13 +84,13 @@
                 </ul>
             </div>
         </div>
-        <div class="row bg-dark">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <div class="row bg-light">
+            <nav class="navbar navbar-dark bg-dark navbar-expand-lg w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                {% include 'includes/mobile-top-header.html' %}
-                {% include 'includes/main-nav.html' %}
+                {% include 'includes/top_mob_header.html' %}
+                {% include 'includes/main_nav.html' %}
             </nav>
         </div>
     </header>
