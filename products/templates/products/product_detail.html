@@ -15,7 +15,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3 py-3">
-                <h2 class="title-class"> The Barbell Shop </h2>
+                <h2 class="title-class">{{ product.name }}</h2>
                 <hr class="w-50 mb-1">
             </div>
         </div>
@@ -24,7 +24,6 @@
         <div class="row">
             <div class="col-8 offset-2 ">
                 <div class="image-container my-5">
-                    <h3 class="mb-0 title-class">{{ product.name }}</h3>
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">

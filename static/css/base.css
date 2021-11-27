@@ -1,4 +1,3 @@
-
 html {
     height: 100%;
 }
@@ -12,13 +11,8 @@ body {
     text-align: center;
 }
 
-h1
-h2
-h3
-h4
-h5
-h6 {
-    font-family: 'Big Shoulders Stencil Text', sans-serif, cursive ;
+h1 h2 h3 h4 h5 h6 {
+    font-family: 'Big Shoulders Stencil Text', sans-serif, cursive;
 }
 
 /* from Bulma */
@@ -46,6 +40,7 @@ h6 {
 
 .main-logo-link {
     width: fit-content;
+    text-align: center;
 }
 
 .nav-button {
@@ -82,9 +77,9 @@ h6 {
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+    .container {
+        max-width: 80%;
+    }
 }
 
 /* fixed top navbar only on medium and up */
@@ -98,7 +93,7 @@ h6 {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 230px;
     }
 }
 
