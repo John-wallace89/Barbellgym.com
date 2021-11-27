@@ -6,7 +6,7 @@ html {
 body {
     background: url('/media/b+w_background.jpg') no-repeat center center;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: calc(100vh - 200px);
     color: #0f1210;
     font-family: 'Big Shoulders Stencil Text', cursive;
     text-align: center;
@@ -99,5 +99,16 @@ h6 {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* top padding when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }
