@@ -15,18 +15,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3 py-3">
-                <h2 class="title-class"> The Barbell Shop</h2>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle justify-content-end" type="button"
-                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Sort
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                        <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                        <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                    </div>
-                </div>
+                <h2 class="title-class">The Barbell Shop</h2>
                 <hr class="w-50 mb-1">
             </div>
         </div>
