@@ -60,10 +60,12 @@ def edit_basket(request, item_id):
     if size:
         if quantity > 0:
             basket[item_id]['items_by_size'][size] = quantity
+            messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {basket[item_id]["items_by_size"][size]}')
         else:
             del basket[item_id]['items_by_size'][size]
             if not basket[item_id]['items_by_size'][size]:
                 basket.pop(item_id)
+            messages.success(request, f'Removed size {size.upper()} {product.name} from your bag')
     else:
         if quantity > 0:
             basket[item_id] = quantity

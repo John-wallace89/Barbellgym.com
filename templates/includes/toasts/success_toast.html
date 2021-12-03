@@ -24,8 +24,8 @@
                 </div>
                 <div class="col-9">
                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                    <p class="my-0 small">Size:{{ item.size|upper }}</p>
-                    <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                    <p class="my-0">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                    <p class="my-0 text-muted">Qty: {{ item.quantity }}</p>
                 </div>
             </div>
             {% endfor %}
@@ -43,6 +43,12 @@
                         <i class="fas fa-lock"></i>
                     </span>
                 </a>
+                <button type="button" class="btn btn-black btn-block rounded-0" data-dismiss="toast" aria-label="Close">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span aria-hidden="true">Keep Shopping</span>
+                </button>
             </div>
         </div>
         {% endif %}
