@@ -96,6 +96,7 @@ smmap==4.0.0
 snowballstemmer==2.1.0
 sqlparse==0.4.2
 stevedore==3.4.0
+stripe==2.63.0
 terminado==0.12.1
 testpath==0.5.0
 toml==0.10.2
