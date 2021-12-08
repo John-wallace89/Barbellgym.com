@@ -77,7 +77,7 @@
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label text-black px-2 w-auto text-left">Delivery</legend>
+                        <legend class="fieldset-label text-black px-2 w-auto text-left">Billing Details</legend>
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
                         {{ order_form.postcode | as_crispy_field }}
@@ -87,7 +87,7 @@
                         {{ order_form.county | as_crispy_field }}
                         <div class="form-check form-check-inline float-right mr-0">
 							{% if user.is_authenticated %}
-								<label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+								<label class="form-check-label" for="id-save-info">Save my information to my profile for next time</label>
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
 							{% else %}
 								<label class="form-check-label" for="id-save-info">
@@ -104,6 +104,9 @@
 
                         <!-- Used to display form errors -->
                         <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                        
+                        <!-- Pass the client secret to the view so we can get the payment intent id -->
+                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-2">                    
