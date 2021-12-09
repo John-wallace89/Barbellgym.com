@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.views.decorators.csrf import csrf_exempt
+
 from .models import Product, Category
 
 # views
 
-
+@csrf_exempt
 def products(request):
     """ A view to show all products, including sorting and search queries """
 

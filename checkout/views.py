@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from django.conf import settings
 
@@ -12,15 +13,13 @@ import stripe
 import json
 
 
-# views
-
-
+@csrf_exempt
 @require_POST
 def save_checkout_data(request):
     try:
-        payment_id = request.POST.get('client_secret').split('_secret')[0]
+        pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        stripe.PaymentIntent.modify(payment_id, metadata={
+        stripe.PaymentIntent.modify(pid, metadata={
             'basket': json.dumps(request.session.get('basket', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
@@ -32,11 +31,12 @@ def save_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
+@csrf_exempt
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    if request.method == "POST":
+    if request.method == 'POST':
         basket = request.session.get('basket', {})
 
         form_data = {
@@ -53,8 +53,8 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
-            payment_id = request.POST.get('client_secret').split('_secret')[0]
-            order.stripe_pid = payment_id
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
             order.original_basket = json.dumps(basket)
             order.save()
             for item_id, item_data in basket.items():
@@ -78,7 +78,8 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your basket wasn't found in our database.")
+                        "Oops! Looks like this products doesn't exist! \
+                         Please contact the administrator")
                     )
                     order.delete()
                     return redirect(reverse('view_basket'))
@@ -86,20 +87,19 @@ def checkout(request):
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(request, 'Oops! something went wrong. \
-                Please double check your information in your order form.')
-
+            messages.error(request, 'There was an error with your form. \
+                Please double check your information.')
     else:
         basket = request.session.get('basket', {})
         if not basket:
-            messages.error(request, "There's nothing in your basket at the moment")
+            messages.error(request, "Your Basket is Empty")
             return redirect(reverse('products'))
 
         current_basket = basket_contents(request)
         total = current_basket['total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
-        pay_intent = stripe.PaymentIntent.create(
+        intent = stripe.PaymentIntent.create(
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
@@ -107,21 +107,23 @@ def checkout(request):
         order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing')
+        messages.warning(request, 'Stripe public key is missing. \
+            Did you forget to set it in your environment?')
 
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
-        'client_secret': pay_intent.client_secret,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
 
 
+@csrf_exempt
 def checkout_success(request, order_number):
     """
-    A view to handle successful checkout
+    Handle successful checkouts
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)

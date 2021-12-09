@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import Order, OrderLineItem
 from products.models import Product
@@ -7,6 +8,7 @@ import json
 import time
 
 
+@csrf_exempt
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
@@ -21,28 +23,42 @@ class StripeWH_Handler:
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
 
+    @csrf_exempt
     def handle_payment_intent_succeeded(self, event):
         """
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
-        payment_id = intent.id
+        pid = intent.id
         basket = intent.metadata.basket
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
+        shipping_details = intent.shipping
+        order_total = round(intent.charges.data[0].amount / 100, 2)
+
+        # Clean data in the shipping details
+        for field, value in shipping_details.address.items():
+            if value == "":
+                shipping_details.address[field] = None
 
         order_exists = False
         attempt = 1
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    full_name__iexact=billing_details.name,
+                    full_name__iexact=shipping_details.name,
                     email__iexact=billing_details.email,
-                    phone_number__iexact=billing_details.phone,
+                    phone_number__iexact=shipping_details.phone,
+                    country__iexact=shipping_details.address.country,
+                    postcode__iexact=shipping_details.address.postal_code,
+                    town_or_city__iexact=shipping_details.address.city,
+                    street_address1__iexact=shipping_details.address.line1,
+                    street_address2__iexact=shipping_details.address.line2,
+                    county__iexact=shipping_details.address.state,
                     order_total=order_total,
                     original_basket=basket,
-                    stripe_pid=payment_id,
+                    stripe_pid=pid,
                 )
                 order_exists = True
                 break
@@ -57,10 +73,17 @@ class StripeWH_Handler:
             order = None
             try:
                 order = Order.objects.create(
-                    full_name=billing_details.name,
+                    full_name=shipping_details.name,
                     email=billing_details.email,
+                    phone_number=shipping_details.phone,
+                    country=shipping_details.address.country,
+                    postcode=shipping_details.address.postal_code,
+                    town_or_city=shipping_details.address.city,
+                    street_address1=shipping_details.address.line1,
+                    street_address2=shipping_details.address.line2,
+                    county=shipping_details.address.state,
                     original_basket=basket,
-                    stripe_pid=payment_id,
+                    stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(basket).items():
                     product = Product.objects.get(id=item_id)
