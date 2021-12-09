@@ -173,6 +173,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# A list of hosts which are trusted origins for unsafe requests
+# https://docs.djangoproject.com/en/3.2/ref/settings/#csrf-trusted-origins
+
+CSRF_TRUSTED_ORIGINS = [
+    '.https://8000-sapphire-chickadee-v75mlfae.ws-eu21.gitpod.io/'
+]
+
+# Marking CSRF cookie as secure
+# https://docs.djangoproject.com/en/3.2/ref/settings/#csrf-cookie-secure
+
+CSRF_COOKIE_SECURE = True
+
 # Stripe
 
 STRIPE_CURRENCY = 'gbp'
