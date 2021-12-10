@@ -177,7 +177,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#csrf-trusted-origins
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-sapphire-chickadee-v75mlfae.ws-eu21.gitpod.io/'
+    '.https://8000-sapphire-chickadee-v75mlfae.ws-eu21.gitpod.io/'
 ]
 
 # Marking CSRF cookie as secure
