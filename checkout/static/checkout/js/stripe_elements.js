@@ -85,7 +85,7 @@ form.addEventListener('submit', function (ev) {
                         state: $.trim(form.county.value),
                     }
                 }
-            }
+            },
         }).then(function(result) {
             if (result.error) {
                 let errorDiv = document.getElementById('card-errors');
