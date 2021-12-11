@@ -1,1 +1,14 @@
 {% extends "base.html" %}
+
+{% block content %}
+    <div class="container header-container">
+        <div class="row pt-5">
+            <div class="col-8 offset-2 pt-3" style="background-color: rgba(0, 0, 0, 0.60);">
+                <div class="allauth-form-inner-content text-white text-center">
+                    {% block inner_content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
