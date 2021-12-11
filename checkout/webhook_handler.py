@@ -33,16 +33,12 @@ class StripeWH_Handler:
         billing_details = intent.charges.data[0].billing_details
         order_total = round(intent.charges.data[0].amount / 100, 2)
 
-        for field, value in shipping_details.address.items():
-            if value == "":
-                shipping_details.address[field] = None
-
         order_exists = False
         attempt = 1
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    full_name__iexact=shipping_details.name,
+                    full_name__iexact=billing_details.name,
                     email__iexact=billing_details.email,
                     phone_number__iexact=billing_details.phone,
                     order_total=order_total,
