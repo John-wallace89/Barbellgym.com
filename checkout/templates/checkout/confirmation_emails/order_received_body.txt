@@ -1,0 +1,26 @@
+Hello {{ order.full_name }}!
+
+Thank you for your order!. Your order has been received by The Barbell Gym, and we'll send you a second confirmation once your order
+is ready to pick up from the gym in 10 working days.
+
+Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: ${{ order.order_total }}
+
+Your order will be shipped to the Barbell Gym, please see address below:
+
+Barbell gym
+Bathgate
+EH48 2RX
+
+We've got your phone number on file as {{ order.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Keep training hard!
+
+Gavin Smith,
+Personal Trainer
