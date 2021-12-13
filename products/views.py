@@ -5,8 +5,10 @@ from django.db.models.functions import Lower
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import Product, Category
+from .forms import ProductForm
 
 # views
+
 
 @csrf_exempt
 def products(request):
@@ -71,3 +73,14 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def add_product(request):
+    """ A view to add a product to the site """
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
