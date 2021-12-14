@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background: url('/media/b+w_background.jpg') no-repeat center center;
+    background: url('/media/gym_home.jpg') no-repeat center center;
     background-size: cover;
     height: calc(100vh - 200px);
     color: #0f1210;
@@ -28,7 +28,6 @@ h1 h2 h3 h4 h5 h6 {
 
 .logo-class {
     text-transform: uppercase;
-    color: #fafafa;
     font-size: 3rem;
     letter-spacing: 1px;
     word-spacing: 10px;
