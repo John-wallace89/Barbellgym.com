@@ -83,6 +83,60 @@ h1 h2 h3 h4 h5 h6 {
     z-index: -1;
 }
 
+.overlay-products {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: url('/media/b+w_background.jpg') no-repeat center center;
+    z-index: -1;
+}
+
+/*------ Footer ----*/
+
+.footer-col {
+	display: inline-block;
+	text-align: center;
+	margin: 0;
+	padding-top: 15px;
+	width: 100%;
+}
+
+.footer-col a {
+	text-decoration: none;
+}
+
+.footer-heading {
+	font-family: "Big Shoulders Stencil Text", sans-serif;
+	font-size: 30px;
+	font-weight: 300;
+	color: #fafafa;
+	text-transform: uppercase;
+}
+
+.footer-heading:hover {
+    text-decoration: underline;
+}
+
+.social-icon i {
+	text-decoration: none;
+	font-size: 25px;
+	color: #fafafa;
+	text-align: center;
+	padding: 10px;
+	transition: all 0.20s ease-in-out;
+	-webkit-transition: all 0.20s ease-in-out;
+	-moz-transition: all 0.20s ease-in-out;
+	-o-transition: all 0.20s ease-in-out;
+}
+
+.social-icon i:hover {
+	transform: scale(1.25);
+	color: #fafafa;
+}
+
+
 /*----- Back to top button ----- */
 
 #btn-to-top {
