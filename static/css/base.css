@@ -31,7 +31,7 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 
-/*------- Nav -------*/ 
+/*------- Navigation -------*/ 
 
 .main-logo-link {
     width: fit-content;
@@ -49,6 +49,11 @@ h1 h2 h3 h4 h5 h6 {
     background: #222;
     color: white;
 }
+
+.btn-primary {
+    border-color: black;
+}
+
 
 .nav-button:hover,
 .nav-button:active,
@@ -89,6 +94,10 @@ h1 h2 h3 h4 h5 h6 {
     z-index: -1;
 }
 /*------ Footer ----*/
+
+footer {
+    position: absolute;
+}
 
 .footer-col {
 	display: inline-block;
