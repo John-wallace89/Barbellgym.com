@@ -22,14 +22,12 @@ h1 h2 h3 h4 h5 h6 {
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
-    color: #fafafa;
 }
 
 .title-class {
     text-transform: uppercase;
     text-align: center;
 }
-
 
 /*------- Navigation -------*/ 
 
@@ -97,6 +95,9 @@ h1 h2 h3 h4 h5 h6 {
 
 footer {
     position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 9999;
 }
 
 .footer-col {
@@ -336,20 +337,25 @@ a .footer-heading:hover {
 /* top padding when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 90px;
+        padding-top: 45px;
     }
 
     body {
         height: calc(100vh - 116px);
     }
 
+    .container {
+        padding-bottom: 3rem;
+    }
+
     footer {
         position: fixed;
         bottom: 0;
+        padding-top: 5rem;
     }
 
     .footer-col {
-        padding-top: 0;
+        padding: 0;
     }
 }
 
