@@ -12,7 +12,7 @@
 
 {% block content %}
     <div class="container-fluid h-100" style="background-color: rgba(0,0,0,0.50);">
-        <div class="row mt-5">
+        <div class="row">
             <div class="col my-auto">
                 <h1 class="display-3 title-class text-white">Welcome to the Wolf Pit</h1>
             </div>
@@ -20,21 +20,18 @@
         <section>
             <div class="row pt-5">
                 <div class="col-12 col-md-6 my-auto" style="padding-top: 3rem;">
-                    <h5 class="card-title title-class text-white">Barbell Shop</h5>
-                    <p class="card-text text-white">From legging sets to weightlifting sets, we've got you covered. Checkout the Barbell Shop</p>
+                    <h3 class="card-title title-class text-white">Barbell Shop</h3>
+                    <h5 class="card-text text-white">From legging sets to weightlifting sets, we've got you covered. Checkout the Barbell Shop</h5>
                     <a href="{% url 'products' %}" class="btn btn-primary nav-button">Shop Now</a>
                 </div>
                 <div class="col-12 col-md-6 my-auto" style="padding-top: 3rem;" >
-                    <h5 class="card-title title-class text-white">Barbell Training</h5>
-                    <p class="card-text text-white">Book 121 PT sessions, or check out our classes</p>
+                    <h3 class="card-title title-class text-white">Barbell Training</h3>
+                    <h5 class="card-text text-white">Book 121 PT sessions, or check out our classes</h5>
                     <a href="{% url 'products' %}" class="btn btn-primary nav-button">More Info</a>
                 </div>
             </div>
         </section>
     </div>
-    <!-- <div class="container-fluid" style="background-color: rgba(0,0,0,0.50);">
-        
-    </div> -->
 {% endblock %}
 
 {% block postloadjs %}

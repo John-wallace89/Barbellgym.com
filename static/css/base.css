@@ -230,6 +230,10 @@ a .footer-heading:hover {
     .container {
         max-width: 80%;
     }
+
+    footer {
+        padding-bottom: 0;
+    }
 }
 
 /* Allauth form formatting */
@@ -337,6 +341,15 @@ a .footer-heading:hover {
 
     body {
         height: calc(100vh - 116px);
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .footer-col {
+        padding-top: 0;
     }
 }
 
