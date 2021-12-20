@@ -341,7 +341,7 @@ a .footer-heading:hover {
     }
 
     body {
-        height: calc(100vh - 116px);
+        height: calc(100vh - 80px);
     }
 
     .container {
@@ -357,8 +357,4 @@ a .footer-heading:hover {
     .footer-col {
         padding: 0;
     }
-}
-
-.fa-user:before {
-    padding-right: 1rem;
 }

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay-products"></div>
+    <section class="container-fluid bg-color-gym contact-us">
+        <div class="row gym-info">
+            <div class="col">
+                <h3 class="sub-heading">If you're interested in any of our products or services, please drop us
+                    a direct message to any of the platforms below</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h4 class="title-class">instagram</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <a href="https://www.instagram.com/the_barbell_gym/?hl=en" target="_blank" class="social-link-insta">
+                    <h4 class="sub-heading">barbell gym</h4>
+                    <img src="./assets/images/photos/bb_insta.JPG" class="img-fluid rounded mx-auto d-block"
+                        alt="barbell gym instagram" style="object-fit: fill;">
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 social-tile">
+                <a href="https://www.instagram.com/barbell.gear/?hl=en" target="_blank" class="social-link-insta">
+                    <h4 class="sub-heading">barbell gear</h4>
+                    <img src="./assets/images/photos/bbg_insta.JPG" class="img-fluid rounded mx-auto d-block"
+                        alt="barbell gear instagram" style="object-fit: fill;">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h4 class="title-class">facebook</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="https://www.facebook.com/GavinSmithFit" target="_blank" class="social-link-fb">
+                    <img src="./assets/images/photos/bb_fb.JPG" class="img-fluid rounded mx-auto d-block"
+                        alt="gavin smith pt facebook">
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid bg-color-home">
+        <div class="row gym-info">
+            <div class="col">
+                <h3 class="location-header">location</h3>
+            </div>
+        </div>
+        <div class="row gym-info">
+            <div class="col-12 col-sm-6" style="border: solid 2px #fafafa;">
+                <h4 class="title-class">Address</h4>
+                <address>
+                    <h5>
+                        The Barbell Gym (The Wolf Pit)<br>
+                        Factory Road<br>
+                        Bathgate<br>
+                        West Lothian<br>
+                        EH48 2RX<br>
+                    </h5>
+                </address>
+            </div>
+            <!-- responsive class from https://blog.duda.co/responsive-google-maps-for-your-website-->
+            <div class="col-12 col-sm-6 map-responsive">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8949.16088787261!2d-3.654656632056064!3d55.89232583666121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x190fbe0db1bb83ee!2sThe%20Barbell%20Gym%20(The%20Wolf%20Pit)!5e0!3m2!1sen!2suk!4v1613239812320!5m2!1sen!2suk"
+                    style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                </iframe>
+            </div>
+        </div>
+    </section>
+{% endblock %}
