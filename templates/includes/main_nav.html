@@ -7,10 +7,10 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="title-class font-weight-bold nav-link text-black mr-5" href="#" id="shop-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="title-class font-weight-bold nav-link text-black mr-5" href="#" id="product-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Barbell Shop
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
+            <div class="dropdown-menu border-0" aria-labelledby="product-link">
                 <a href="{% url 'products' %}?category=tshirts" class="dropdown-item">T-shirts</a>
                 <a href="{% url 'products' %}?category=sweatshirts" class="dropdown-item">Sweatshirts</a>
                 <a href="{% url 'products' %}?category=legging_sets" class="dropdown-item">Legging Sets</a>
@@ -23,9 +23,8 @@
             <a class=" title-class logo-font font-weight-bold nav-link text-black mr-5" href="#" id="training-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Barbell Training
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Barbell Brothers</a>
-                <a href="" class="dropdown-item">Barbell Graft</a>
+            <div class="dropdown-menu border-0" aria-labelledby="training-link">
+                <a href="{% url 'classes' %}" class="dropdown-item">Barbell Classes</a>
                 <a href="" class="dropdown-item">Personal Training</a>
             </div>
         </li>
