@@ -141,6 +141,14 @@ a .footer-heading:hover {
 	color: #fafafa;
 }
 
+/* ------ Map ------*/
+
+.map-responsive
+iframe {
+width: 100%;
+height: 400px;
+}
+
 
 /*----- Back to top button ----- */
 
@@ -351,7 +359,7 @@ a .footer-heading:hover {
     footer {
         position: fixed;
         bottom: 0;
-        padding-top: 5rem;
+        padding-top: 1rem;
     }
 
     .footer-col {
