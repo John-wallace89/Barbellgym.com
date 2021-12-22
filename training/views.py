@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from .models import Classes, PersonalTrainers
+
 
 # views
 def classes(request):
