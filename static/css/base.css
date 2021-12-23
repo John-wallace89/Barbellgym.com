@@ -73,7 +73,9 @@ h1 h2 h3 h4 h5 h6 {
 
 .social-tile
 .img-fluid {
-    max-height: 250px;
+    height: 250px;
+    width: 250px;
+
 }
 
 /*-----Overlays-----*/
@@ -96,9 +98,17 @@ h1 h2 h3 h4 h5 h6 {
     background: url('/media/b+w_background.jpg') no-repeat center center;
     z-index: -1;
 }
+
+/*---- Carousel-----*/
+
+.carousel-item
+img {
+    max-height: 600px;
+}
+
 /*------ Footer ----*/
 
-footer {
+/* footer {
     position: absolute;
     width: 100%;
     left: 0;
@@ -144,7 +154,7 @@ a .footer-heading:hover {
 .social-icon i:hover {
 	transform: scale(1.25);
 	color: #fafafa;
-}
+} */
 
 /* ------ Map ------*/
 
