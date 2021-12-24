@@ -1,1 +1,1 @@
-web: gunicorn barbellgym.wsgi.application:application
+web: gunicorn barbellgym.wsgi:application
