@@ -11,15 +11,56 @@
 {% endblock %}
 
 {% block content %}
-<!-- Title -->
-<div class="overlay-products"></div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col text-center mt-3 py-3">
-      <h2 class="title-class">Personal Training</h2>
-      <hr class="w-50 mb-1">
+  <!-- Title -->
+  <div class="overlay-products"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col text-center mt-3 py-3">
+        <h2 class="title-class">Personal Training</h2>
+        <hr class="w-50 mb-1">
+      </div>
     </div>
   </div>
-</div>
 
+  {% for p in p_trainers %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-4 py-2 mx-auto">
+        <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+          style="object-fit: fill; max-height: 300px; width: 100%;">
+        <h3>Name: {{ p.name }}</h3>
+        <h4 class="py-3">Qualifications: {{ p.qualifications|linebreaks }}</h4>
+      </div>
+      <div class="col-12 col-sm-8 py-2 mx-auto">
+        <h4 class="py-4"><blockquote>{{ p.description }}</blockquote></h4>
+        <h4><strong>Price per session: £{{ p.price_per_session }}</strong></h4>
+        {% if p.price_per_block_4 %}
+          <h4><strong>Price per 4 week block: £{{ p.price_per_block_4 }}</strong></h4>
+        {% endif %}
+        {% if p.price_per_block_8 %}
+          <h4><strong>Price 8 week block: £{{ p.price_per_block_8 }}</strong></h4>
+        {% endif %}
+        {% if p.price_per_block_12 %}
+          <h4><strong>Price per 12 week block: £{{ p.price_per_block_12 }}</strong></h4>
+        {% endif %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 my-3">
+        <h5 class="title-class">want to sign up? find out how to get in touch below</h5>
+        <a href="{% url 'contact_us' %}" class="btn btn-black rounded-0 mb-5">
+          <span class="text-uppercase">get in touch</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="javascript/text">
+  $('.carousel').carousel('cycle')
+
+  </script>
 {% endblock %}
