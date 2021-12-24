@@ -6,6 +6,7 @@ from django.db.models.functions import Lower
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import Classes, PersonalTrainers
+from .forms import ClassesForm
 
 
 # views
@@ -32,3 +33,29 @@ def personal_training(request):
     }
 
     return render(request, 'training/personal_training.html', context)
+
+
+@login_required
+def add_class(request):
+    """ A view to add a class to the site """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have permisson to access this page.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = ClassesForm(request.POST, request.FILES)
+        if form.is_valid():
+            classes = form.save()
+            messages.success(request, 'Class successfully added!')
+            return redirect(reverse('barbell_classes'))
+        else:
+            messages.error(request, 'Failed to add Class, please ensure form is valid')
+    else:
+        form = ClassesForm()
+
+    template = 'training/add_class.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
