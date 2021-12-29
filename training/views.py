@@ -98,15 +98,15 @@ def edit_class(request, classes_id):
     return render(request, template, context)
 
 
-# @login_required
-# def delete_product(request, product_id):
-#     """ A view to delete a product """
-#     if not request.user.is_superuser:
-#         messages.error(request, 'Sorry, you do not have \
-#         permisson to access this page.')
-#         return redirect(reverse('home'))
+@login_required
+def delete_class(request, classes_id):
+    """ A view to delete a class """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have \
+        permisson to access this page.')
+        return redirect(reverse('home'))
 
-#     product = get_object_or_404(Product, pk=product_id)
-#     product.delete()
-#     messages.success(request, 'Product successfully deleted!')
-#     return redirect(reverse('products'))
+    classes = get_object_or_404(Classes, pk=classes_id)
+    classes.delete()
+    messages.success(request, 'Class successfully deleted!')
+    return redirect(reverse('barbell_classes'))
