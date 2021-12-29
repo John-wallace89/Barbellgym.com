@@ -98,10 +98,11 @@
       </div>
     </div>
     {% if request.user.is_superuser %}
-      <small class="ml-3">
-        <a href="#">Edit</a> |
+      <h6>{{ class.id }}</h6>
+      <p class="ml-3">
+        <a href="{% url 'edit_class' class.id %}">Edit</a> |
         <a class="text-danger" href="#">Delete</a>
-      </small>
+      </p>
     {% endif %}
   </div>
   {% endfor %}
