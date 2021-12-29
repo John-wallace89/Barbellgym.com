@@ -150,34 +150,51 @@
     {% block content %}
     {% endblock %}
 
-    <!-- Footer -->
-    <!-- <footer class="container-fluid page-footer mt-5">
-        <div class="row bg-dark">
-            <div class="col footer-col">
-                <a href="" aria-label="contact us">
-                    <h4 class="uppercase footer-heading">Contact Us</h4>
-                </a>
-            </div>
-            <div class="col footer-col">
-                <h4 class="footer-heading">Social Links</h4>
-                <a href="https://www.instagram.com/the_barbell_gym/?hl=en" target="_blank" class="social-icon"><i
-                        class="fab fa-instagram-square" aria-hidden="true"></i>
-                    <span class="sr-only">instagram</span>
-                </a>
-                <a href="https://www.facebook.com/GavinSmithFit" target="_blank" class="social-icon"><i
-                        class="fab fa-facebook-square" aria-hidden="true"></i><span class="sr-only">facebook</span>
-                </a>
-                <a href="https://www.instagram.com/barbell.gear/?hl=en-gb" target="_blank" class="social-icon"><i
-                    class="fas fa-dumbbell" aria-hidden="true"></i>
-                <span class="sr-only">instagram</span>
-            </a>
-            </div>
-        </div>
-    </footer> -->
-
     {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
+        <script type="text/javascript">
+            $('.toast').toast('show');
+
+        // Scroll animation for site - Credit https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section1
+        $(document).ready(function () {
+        $("a").on("click", function (event) {
+            if (this.hash !== "") {
+            event.preventDefault();
+            let hash = this.hash;
+            $("html, body").animate(
+                {
+                scrollTop: $(hash).offset().top,
+                },
+                1500,
+                function () {
+                window.location.hash = hash;
+                }
+            );
+            }
+        });
+        });
+
+        // Back to top button functionality - Credit https://mdbootstrap.com/docs/standard/extended/back-to-top/
+        let mybutton = document.getElementById("btn-to-top");
+
+        window.onscroll = function () {
+        scrollFunction();
+        };
+
+        function scrollFunction() {
+        if (
+            document.body.scrollTop > 200 ||
+            document.documentElement.scrollTop > 200
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+        mybutton.addEventListener("click", scrollToTop);
+
+        function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        }
     </script>
     {% endblock %}
 

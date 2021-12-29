@@ -125,14 +125,13 @@
         </div>
     </div>
 </div>
-<a class="btn btn-primary" id="btn-to-top" href="#top" role="button">
+<a class="btn btn-primary btn-dark" id="btn-to-top" href="#top" role="button">
     <i class="fas fa-chevron-up"></i>
 </a>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/back_to_top_btn.html' %}
 
 <script type="text/javascript">
     $('#sort-selector').change(function () {
@@ -154,6 +153,7 @@
 
             window.location.replace(currentUrl);
         }
-    })
+    });
 </script>
+
 {% endblock %}
