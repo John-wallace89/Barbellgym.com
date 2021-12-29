@@ -30,3 +30,5 @@ urlpatterns = [
     path('training/', include('training.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'barbellgym.views.error_404'

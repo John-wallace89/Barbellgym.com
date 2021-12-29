@@ -23,43 +23,67 @@
   </div>
 
   {% for p in pt %}
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12 col-sm-4 py-2 mx-auto">
-        <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
-          style="object-fit: fill; max-height: 300px; width: 100%;">
-        <h3>Name: {{ p.name }}</h3>
-        <h4 class="py-3">Qualifications: {{ p.qualifications|linebreaks }}</h4>
+    <div class="container-fluid">
+    {% if forloop.counter|divisibleby:2 %}
+      <div class="row">
+        <div class="col-12 col-sm-8 py-2 mx-auto">
+          <h4 class="py-4"><blockquote>{{ p.description }}</blockquote></h4>
+          <h4><strong>Price per session: £{{ p.price_per_session }}</strong></h4>
+          {% if p.price_per_block_4 %}
+            <h4><strong>Price per 4 week block: £{{ p.price_per_block_4 }}</strong></h4>
+          {% endif %}
+          {% if p.price_per_block_8 %}
+            <h4><strong>Price 8 week block: £{{ p.price_per_block_8 }}</strong></h4>
+          {% endif %}
+          {% if p.price_per_block_12 %}
+            <h4><strong>Price per 12 week block: £{{ p.price_per_block_12 }}</strong></h4>
+          {% endif %}
+        </div>
+        <div class="col-12 col-sm-4 py-2 mx-auto">
+          <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+            style="object-fit: fill; max-height: 300px; width: 100%;">
+          <h3>Name: {{ p.name }}</h3>
+          <h4 class="py-3">Qualifications: {{ p.qualifications|linebreaks }}</h4>
+        </div>
       </div>
-      <div class="col-12 col-sm-8 py-2 mx-auto">
-        <h4 class="py-4"><blockquote>{{ p.description }}</blockquote></h4>
-        <h4><strong>Price per session: £{{ p.price_per_session }}</strong></h4>
-        {% if p.price_per_block_4 %}
-          <h4><strong>Price per 4 week block: £{{ p.price_per_block_4 }}</strong></h4>
+    {% else %}
+      <div class="row">
+        <div class="col-12 col-sm-4 py-2 mx-auto">
+          <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+            style="object-fit: fill; max-height: 300px; width: 100%;">
+          <h3>Name: {{ p.name }}</h3>
+          <h4 class="py-3">Qualifications: {{ p.qualifications|linebreaks }}</h4>
+        </div>
+        <div class="col-12 col-sm-8 py-2 mx-auto">
+          <h4 class="py-4"><blockquote>{{ p.description }}</blockquote></h4>
+          <h4><strong>Price per session: £{{ p.price_per_session }}</strong></h4>
+          {% if p.price_per_block_4 %}
+            <h4><strong>Price per 4 week block: £{{ p.price_per_block_4 }}</strong></h4>
+          {% endif %}
+          {% if p.price_per_block_8 %}
+            <h4><strong>Price 8 week block: £{{ p.price_per_block_8 }}</strong></h4>
+          {% endif %}
+          {% if p.price_per_block_12 %}
+            <h4><strong>Price per 12 week block: £{{ p.price_per_block_12 }}</strong></h4>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+      <div class="row">
+        <div class="col-12 my-3">
+        {% if request.user.is_superuser %}
+          <p class="ml-3">
+            <a href="{% url 'edit_pt' p.id %}">Edit</a> |
+            <a class="text-danger" href="{% url 'delete_pt' p.id %}">Delete</a>
+          </p>
         {% endif %}
-        {% if p.price_per_block_8 %}
-          <h4><strong>Price 8 week block: £{{ p.price_per_block_8 }}</strong></h4>
-        {% endif %}
-        {% if p.price_per_block_12 %}
-          <h4><strong>Price per 12 week block: £{{ p.price_per_block_12 }}</strong></h4>
-        {% endif %}
+          <h5 class="title-class">want to sign up? find out how to get in touch below</h5>
+          <a href="{% url 'contact_us' %}" class="btn btn-black rounded-0 mb-5">
+            <span class="text-uppercase">get in touch</span>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 my-3">
-      {% if request.user.is_superuser %}
-        <p class="ml-3">
-          <a href="{% url 'edit_pt' p.id %}">Edit</a> |
-          <a class="text-danger" href="{% url 'delete_pt' p.id %}">Delete</a>
-        </p>
-      {% endif %}
-        <h5 class="title-class">want to sign up? find out how to get in touch below</h5>
-        <a href="{% url 'contact_us' %}" class="btn btn-black rounded-0 mb-5">
-          <span class="text-uppercase">get in touch</span>
-        </a>
-      </div>
-    </div>
-  </div>
   {% endfor %}
 {% endblock %}
 
