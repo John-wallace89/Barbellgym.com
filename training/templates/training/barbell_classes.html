@@ -33,7 +33,7 @@
         <h6>{{ class.description|linebreaks }}</h6>
       </div>
     </div>
-    {% if forloop.counter == 1 %}
+    {% if class.id == 1 %}
     <div class="row py-5">
       <div class="col-8 offset-2">
         <div id="carousel-1" class="carousel slide" data-ride="carousel">
@@ -62,7 +62,7 @@
         </div>
       </div>
     </div>
-    {% elif forloop.counter == 2 %}
+    {% elif class.id == 2 %}
     <div class="row py-5">
       <div class="col-8 offset-2">
         <div id="carousel-2" class="carousel slide" data-ride="carousel">
