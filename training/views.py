@@ -108,10 +108,10 @@ def delete_class(request, classes_id):
 def personal_training(request):
     """ A view to return Barbell personal training """
 
-    p_trainers = PersonalTrainers.objects.all()
+    pt = PersonalTrainers.objects.all()
 
     context = {
-        'p_trainers': p_trainers,
+        'pt': pt,
     }
 
     return render(request, 'training/personal_training.html', context)
@@ -129,7 +129,7 @@ def add_personal_trainer(request):
     if request.method == 'POST':
         form = PersonalTrainerForm(request.POST, request.FILES)
         if form.is_valid():
-            p_trainers = form.save()
+            pt = form.save()
             messages.success(request, 'PT successfully added!')
             return redirect(reverse('personal_training'))
         else:
@@ -141,6 +141,38 @@ def add_personal_trainer(request):
     template = 'training/add_pt.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_personal_trainer(request, pt_id):
+    """ Edit a PT in the store """
+    if not request.user.is_superuser:
+        messages.error(
+            request, 'Sorry, you do not have permisson to access this page.')
+        return redirect(reverse('home'))
+
+    pt = get_object_or_404(PersonalTrainers, pk=pt_id)
+    if request.method == 'POST':
+        form = PersonalTrainerForm(request.POST, request.FILES, instance=pt)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated PT!')
+            return redirect(reverse('personal_training'))
+        else:
+            messages.error(
+                request, 'Failed to update PT. \
+                Please ensure the form is valid.')
+    else:
+        form = PersonalTrainerForm(instance=pt)
+        messages.info(request, f'You are editing {pt.name}')
+
+    template = 'training/edit_pt.html'
+    context = {
+        'form': form,
+        'pt': pt,
     }
 
     return render(request, template, context)
