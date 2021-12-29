@@ -8,10 +8,12 @@ from django.db.models.functions import Lower
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import Classes, PersonalTrainers
-from .forms import ClassesForm
+from .forms import ClassesForm, PersonalTrainerForm
 
 
 # views
+
+# Views for classes
 
 def classes(request):
     """ A view to return Barbell Classes """
@@ -23,18 +25,6 @@ def classes(request):
     }
 
     return render(request, 'training/barbell_classes.html', context)
-
-
-def personal_training(request):
-    """ A view to return Barbell personal training """
-
-    p_trainers = PersonalTrainers.objects.all()
-
-    context = {
-        'p_trainers': p_trainers,
-    }
-
-    return render(request, 'training/personal_training.html', context)
 
 
 @login_required
@@ -110,3 +100,47 @@ def delete_class(request, classes_id):
     classes.delete()
     messages.success(request, 'Class successfully deleted!')
     return redirect(reverse('barbell_classes'))
+
+
+# View for adding Personal Trainers
+
+
+def personal_training(request):
+    """ A view to return Barbell personal training """
+
+    p_trainers = PersonalTrainers.objects.all()
+
+    context = {
+        'p_trainers': p_trainers,
+    }
+
+    return render(request, 'training/personal_training.html', context)
+
+
+@login_required
+def add_personal_trainer(request):
+    """ A view to add a PT to the site """
+    if not request.user.is_superuser:
+        messages.error(
+            request, 'Sorry, you do not have permisson \
+            to access this page.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = PersonalTrainerForm(request.POST, request.FILES)
+        if form.is_valid():
+            p_trainers = form.save()
+            messages.success(request, 'PT successfully added!')
+            return redirect(reverse('personal_training'))
+        else:
+            messages.error(
+                request, 'Failed to add PT, please ensure form is valid')
+    else:
+        form = PersonalTrainerForm()
+
+    template = 'training/add_pt.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
