@@ -2,21 +2,15 @@ from django.shortcuts import render
 
 # views
 
+# Credit - https://www.youtube.com/watch?v=3SKjPppM_DU
 
 def error_404(request, exception):
     return render(request, '404.html')
 
 
-def error_500(request,  exception):
-    data = {}
-    return render(request, 'barbellgym/500.html', data)
-
-
 def error_403(request, exception):
-    data = {}
-    return render(request, 'barbellgym/404.html', data)
+    return render(request, '403.html')
 
 
 def error_400(request,  exception):
-    data = {}
-    return render(request, 'barbellgym/500.html', data)
+    return render(request, '400.html', data)

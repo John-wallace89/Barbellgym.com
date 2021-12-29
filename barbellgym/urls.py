@@ -32,3 +32,5 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'barbellgym.views.error_404'
+handler403 = 'barbellgym.views.error_403'
+handler400 = 'barbellgym.views.error_400'
