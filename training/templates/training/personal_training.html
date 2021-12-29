@@ -40,8 +40,13 @@
           {% endif %}
         </div>
         <div class="col-12 col-sm-4 py-2 mx-auto">
-          <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
-            style="object-fit: fill; max-height: 300px; width: 100%;">
+          {% if p.image %}
+            <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+              style="object-fit: fill; max-height: 300px; width: 100%;">
+          {% else %}
+            <img src="{{ MEDIA_URL }}bb_logo2.png" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+              style="object-fit: fill; max-height: 300px; width: 100%;">
+          {% endif %}
           <h3>Name: {{ p.name }}</h3>
           <h4 class="py-3">Qualifications: {{ p.qualifications|linebreaks }}</h4>
         </div>
@@ -49,8 +54,13 @@
     {% else %}
       <div class="row">
         <div class="col-12 col-sm-4 py-2 mx-auto">
-          <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
-            style="object-fit: fill; max-height: 300px; width: 100%;">
+          {% if p.image %}
+            <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+              style="object-fit: fill; max-height: 300px; width: 100%;">
+          {% else %}
+            <img src="{{ MEDIA_URL }}bb_logo2.png" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+              style="object-fit: fill; max-height: 300px; width: 100%;">
+          {% endif %}
           <h3>Name: {{ p.name }}</h3>
           <h4 class="py-3">Qualifications: {{ p.qualifications|linebreaks }}</h4>
         </div>
