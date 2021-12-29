@@ -8,4 +8,4 @@ node_modules/
 .github/
 *.sqlite3
 *.pyc
-
+db.json

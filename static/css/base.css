@@ -95,7 +95,7 @@ h1 h2 h3 h4 h5 h6 {
     top: 0;
     left: 0;
     position: fixed;
-    background: url('/media/b+w_background.jpg') no-repeat center center;
+    background: url('/media/b_w_background.jpg') no-repeat center center;
     z-index: -1;
 }
 
