@@ -47,6 +47,12 @@
     </div>
     <div class="row">
       <div class="col-12 my-3">
+      {% if request.user.is_superuser %}
+        <p class="ml-3">
+          <a href="{% url 'edit_pt' p.id %}">Edit</a> |
+          <a class="text-danger" href="{% url 'delete_pt' p.id %}">Delete</a>
+        </p>
+      {% endif %}
         <h5 class="title-class">want to sign up? find out how to get in touch below</h5>
         <a href="{% url 'contact_us' %}" class="btn btn-black rounded-0 mb-5">
           <span class="text-uppercase">get in touch</span>

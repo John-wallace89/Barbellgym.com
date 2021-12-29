@@ -13,7 +13,7 @@ from .forms import ClassesForm, PersonalTrainerForm
 
 # views
 
-# Views for classes
+# Views for Class management
 
 def classes(request):
     """ A view to return Barbell Classes """
@@ -102,7 +102,7 @@ def delete_class(request, classes_id):
     return redirect(reverse('barbell_classes'))
 
 
-# View for adding Personal Trainers
+# Views for PT management
 
 
 def personal_training(request):
@@ -176,3 +176,17 @@ def edit_personal_trainer(request, pt_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_personal_trainer(request, pt_id):
+    """ A view to delete a PT """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have \
+        permisson to access this page.')
+        return redirect(reverse('home'))
+
+    pt = get_object_or_404(PersonalTrainers, pk=pt_id)
+    pt.delete()
+    messages.success(request, 'PT successfully deleted!')
+    return redirect(reverse('personal_training'))
