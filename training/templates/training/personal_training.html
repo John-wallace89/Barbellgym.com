@@ -24,7 +24,6 @@
 
   {% for p in pt %}
     <div class="container-fluid">
-    {% if forloop.counter|divisibleby:2 %}
       <div class="row">
         <div class="col-12 col-sm-8 py-2 mx-auto">
           <h4 class="py-4"><blockquote>{{ p.description }}</blockquote></h4>
@@ -57,40 +56,6 @@
           <h4 class="py-3">Qualifications: {{ p.qualifications|linebreaks }}</h4>
         </div>
       </div>
-    {% else %}
-      <div class="row">
-        <div class="col-12 col-sm-4 py-2 mx-auto">
-          {% if p.image %}
-            <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="Personal trainer image"
-              style="object-fit: fill; max-height: 300px; width: 100%;">
-          {% else %}
-            <img src="{{ MEDIA_URL }}bb_logo2.png" class="img-fluid rounded mx-auto d-block" alt="barbell gear logo"
-              style="object-fit: fill; max-height: 300px; width: 100%;">
-          {% endif %}
-          {% if request.user.is_superuser %}
-            <p class="ml-3">
-              <a href="{% url 'edit_pt' p.id %}">Edit</a> |
-              <a class="text-danger" href="{% url 'delete_pt' p.id %}">Delete</a>
-            </p>
-        {% endif %}
-          <h3>Name: {{ p.name }}</h3>
-          <h4 class="py-3">Qualifications: {{ p.qualifications|linebreaks }}</h4>
-        </div>
-        <div class="col-12 col-sm-8 py-2 mx-auto">
-          <h4 class="py-4"><blockquote>{{ p.description }}</blockquote></h4>
-          <h4><strong>Price per session: £{{ p.price_per_session }}</strong></h4>
-          {% if p.price_per_block_4 %}
-            <h4><strong>Price per 4 week block: £{{ p.price_per_block_4 }}</strong></h4>
-          {% endif %}
-          {% if p.price_per_block_8 %}
-            <h4><strong>Price 8 week block: £{{ p.price_per_block_8 }}</strong></h4>
-          {% endif %}
-          {% if p.price_per_block_12 %}
-            <h4><strong>Price per 12 week block: £{{ p.price_per_block_12 }}</strong></h4>
-          {% endif %}
-        </div>
-      </div>
-    {% endif %}
       <div class="row">
         <div class="col-12 my-3">
           <h5 class="title-class">want to sign up? find out how to get in touch below</h5>
