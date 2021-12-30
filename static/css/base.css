@@ -290,7 +290,12 @@ height: 400px;
 
 
 /* -------------------------------- Media Queries */
-
+/*--- carousel images on XL screens---*/
+@media (min-width: 1400px) {
+    .carousel-item img{
+        max-height: 100%;
+    }
+}
 /* container on xl screens */
 @media (min-width: 1200px) {
     .container {
