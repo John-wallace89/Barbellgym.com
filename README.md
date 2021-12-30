@@ -1,12 +1,12 @@
 <h1 style="text-align: center">The Barbellgym.com </h1>
 
-![hero image screenshot]()
+![hero image screenshot](media/barbellgym_responsive_ms4.JPG)
 
 This is my submission for Milestone project 4 for Code Institute. The Barbellgym.com is a site for existing and new members of the Barbell Gym to
 get information, purchase merchandise and send enquiries on classes and personal training. The goal for this site is to be used to generate income
 for the owner of the Barbell Gym and a 'one stop shop' for all new an existing members. 
 
-Live project: []
+Live project: [https://thebarbellgym.herokuapp.com/]
 
 ### User Experience (UX) ###
 
@@ -49,7 +49,18 @@ Desktop and Mobile wireframes - [https://marvelapp.com/prototype/2c593h96]
 
 ![Barbell planner db diagram]()
 
-*insert data relationship description here*
+There are 6 models set up in Django DB
+    
+    Users
+    UserProfiles
+    Emails
+    Orders
+    Categories
+    Products
+    Classes
+    Personal Trainers
+
+
 
 * Features:
     * Responsive layout on mobile and tablet
