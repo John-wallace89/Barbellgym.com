@@ -1,15 +1,19 @@
 /*---- General ---*/
 html {
     height: 100%;
+    background: url('/media/gym_home.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body {
-    background: url('/media/gym_home.jpg') no-repeat center center;
-    background-size: cover;
-    height: calc(100vh - 200px);
+    height: 100vh;
     color: #0f1210;
     font-family: 'Big Shoulders Stencil Text', cursive;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 h1 h2 h3 h4 h5 h6 {
@@ -52,6 +56,12 @@ h1 h2 h3 h4 h5 h6 {
     border-color: black;
 }
 
+.navbar-dark
+.navbar-nav
+.nav-link {
+    color: #fafafa;
+}
+
 
 .nav-button:hover,
 .nav-button:active,
@@ -59,8 +69,8 @@ h1 h2 h3 h4 h5 h6 {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #fafafa;
-    color: black;
+    background: black;
+    color: #fafafa;
 }
 
 .text-white {
@@ -197,20 +207,6 @@ height: 400px;
     overflow-y: auto;
 }
 
-
-/* -------------------------------- Media Queries */
-
-/* container on xl screens */
-@media (min-width: 1200px) {
-    .container {
-        max-width: 80%;
-    }
-
-    footer {
-        padding-bottom: 0;
-    }
-}
-
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
@@ -249,7 +245,7 @@ height: 400px;
     line-height: 1.5;
     border-radius: 0;
 
-    /* standard bootstrap btn transitions */
+    /* --- standard bootstrap btn transitions -- */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
@@ -264,7 +260,7 @@ height: 400px;
 	color: #fafafa;
 }
 
-/* Product Form */
+/*---Product Form--- */
 
 .btn-file {
     position: relative;
@@ -293,6 +289,16 @@ height: 400px;
 }
 
 
+/* -------------------------------- Media Queries */
+
+/* container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -306,6 +312,16 @@ height: 400px;
     .header-container {
         padding-top: 180px;
     }
+
+    .nav-link {
+        margin-right: 3rem;
+    }
+
+    .home-btn-row {
+        padding-right: 3rem;
+        padding-left: 3rem;
+        padding-top: 6rem;
+    }
 }
 
 /* top padding when navbar is collapsed on mobile */
@@ -315,20 +331,18 @@ height: 400px;
     }
 
     body {
-        height: calc(100vh - 80px);
+        height: 100vh;
     }
 
     .container {
         padding-bottom: 3rem;
     }
 
-    footer {
-        position: fixed;
-        bottom: 0;
-        padding-top: 1rem;
+    .nav-link {
+        margin-right: 0;
     }
 
-    .footer-col {
-        padding: 0;
+    .home-btn {
+        padding-top: 3rem;
     }
 }

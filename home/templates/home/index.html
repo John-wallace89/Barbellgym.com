@@ -11,25 +11,25 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid h-100" style="background-color: rgba(0,0,0,0.50);">
+    <div class="container-fluid h-100" style="background-color: rgba(0,0,0,0.70);">
         <div class="row">
             <div class="col my-auto">
                 <h1 class="display-3 title-class text-white">Welcome to the Wolf Pit</h1>
             </div>
         </div>
         <section>
-            <div class="row">
-                <div class="col-12 col-md-4 my-auto" style="padding-top: 3rem;">
+            <div class="row home-btn-row">
+                <div class="col-12 col-md-4 my-auto home-btn">
                     <h3 class="card-title title-class text-white">Barbell Shop</h3>
                     <h5 class="card-text text-white">From legging sets to weightlifting belts, we've got you covered. Checkout the Barbell Shop</h5>
                     <a href="{% url 'products' %}" class="btn btn-primary nav-button">Shop Now</a>
                 </div>
-                <div class="col-12 col-md-4 my-auto" style="padding-top: 3rem;" >
+                <div class="col-12 col-md-4 my-auto home-btn" >
                     <h3 class="card-title title-class text-white">Barbell Classes</h3>
                     <h5 class="card-text text-white">Check out our fitness classes</h5>
                     <a href="{% url 'barbell_classes' %}" class="btn btn-primary nav-button">More Info</a>
                 </div>
-                <div class="col-12 col-md-4 my-auto" style="padding-top: 3rem;" >
+                <div class="col-12 col-md-4 my-auto home-btn">
                     <h3 class="card-title title-class text-white">Barbell Training</h3>
                     <h5 class="card-text text-white">Book 121 Personal Training sessions</h5>
                     <a href="{% url 'personal_training' %}" class="btn btn-primary nav-button">More Info</a>
@@ -41,5 +41,4 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<!-- adding scroll button js here-->
 {% endblock %}
