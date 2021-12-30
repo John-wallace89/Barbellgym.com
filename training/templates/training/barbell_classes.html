@@ -30,7 +30,7 @@
         {% if class.price_per_class %}
         <h4><strong>Price per class: £{{ class.price_per_class }}</strong></h4>
         {% endif %}
-        <h6>{{ class.description|linebreaks }}</h6>
+        <h5>{{ class.description|linebreaks }}</h5>
       </div>
     </div>
     {% if class.id == 1 %}
@@ -98,10 +98,12 @@
       </div>
     </div>
     {% if request.user.is_superuser %}
-      <p class="ml-3">
-        <a href="{% url 'edit_class' class.id %}">Edit</a> |
-        <a class="text-danger" href="{% url 'delete_class' class.id %}">Delete</a>
-      </p>
+      <h5 class="ml-3">
+        <strong>
+          <a href="{% url 'edit_class' class.id %}">Edit</a> |
+          <a class="text-danger" href="{% url 'delete_class' class.id %}">Delete</a>
+        </strong>
+      </h5>
     {% endif %}
   </div>
   {% endfor %}

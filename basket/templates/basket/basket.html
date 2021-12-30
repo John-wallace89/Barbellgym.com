@@ -55,7 +55,7 @@
                                     <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0">${{ item.product.price }}</p>
+                                    <p class="my-0">£{{ item.product.price }}</p>
                                 </td>
                                 <td class="py-3 w-25">
                                     <form class="form update-form" method="POST" action="{% url 'edit_basket' item.item_id %}">
@@ -92,7 +92,7 @@
                                         data-product_size="{{ item.size }}"><small>Remove</small></a>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0">${{ item.product.price | get_subtotal:item.quantity }}</p>
+                                    <p class="my-0">£{{ item.product.price | get_subtotal:item.quantity }}</p>
                                 </td>
                             {% else %}
                                 <td class="p-3 w-25">
@@ -115,7 +115,7 @@
                         {% endfor %}
                         <tr>
                             <td colspan="5" class="pt-5 text-right">
-                                <h4><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h4>
+                                <h4><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h4>
                         </tr>
                         
                         <tr>
