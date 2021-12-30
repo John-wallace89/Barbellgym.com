@@ -12,7 +12,7 @@ Live project: []
 
 * User Story 1 - As a customer, I land on the hompeage of the site and It's clear what the business is.
 * User Story 2 - As a customer I can navigate easily to any section of the site regardless of where I am or what device I am using.s
-* User Story 3 - As a vustomer I can easily access the Contact Us page and social media channels through the Footer of the page.
+* User Story 3 - As a customer I can easily access the Contact Us page and social media channels through the Footer of the page.
 * User Story 4 - As the business owner, I provide customers with a clear and consistent UX in-keeping with the Barbell Gym brand.
 * User Story 5 - As a user, I can easily access the different products available from the Barbell shop.
 * User Story 6 - As a user, if applicable, I can choose the colour and size of my product before adding to the basket.
@@ -38,7 +38,7 @@ Live project: []
 * Typography - the 'Big Shoulders Stencil Text' font is used as it is bold, easy to read and suits the military old school
 feel of the brand.
 
-* Imagery - The Barbell Gym logo is shown throughout the site to draw attention as the business' distinctive feature. Background images include images
+* Imagery - The Barbell Gym logo nd images from the gym are shown throughout the site to draw attention as the business' distinctive features. Background images include images
 from the gym and classes to provide an insight to users of what the gym looks like, can be seen throughout various pages of the site. Images of the products
 were used to show what the products looked like.
 
