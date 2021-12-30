@@ -41,10 +41,10 @@
         </div>
         <div class="col-12 col-sm-4 py-2 mx-auto">
           {% if p.image %}
-            <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+            <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="Personal trainer logo"
               style="object-fit: fill; max-height: 300px; width: 100%;">
           {% else %}
-            <img src="{{ MEDIA_URL }}bb_logo2.png" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+            <img src="{{ MEDIA_URL }}bb_logo2.png" class="img-fluid rounded mx-auto d-block" alt="barbell logo"
               style="object-fit: fill; max-height: 300px; width: 100%;">
           {% endif %}
           {% if request.user.is_superuser %}
@@ -61,10 +61,10 @@
       <div class="row">
         <div class="col-12 col-sm-4 py-2 mx-auto">
           {% if p.image %}
-            <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+            <img src="{{ p.image.url }}" class="img-fluid rounded mx-auto d-block" alt="Personal trainer image"
               style="object-fit: fill; max-height: 300px; width: 100%;">
           {% else %}
-            <img src="{{ MEDIA_URL }}bb_logo2.png" class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+            <img src="{{ MEDIA_URL }}bb_logo2.png" class="img-fluid rounded mx-auto d-block" alt="barbell gear logo"
               style="object-fit: fill; max-height: 300px; width: 100%;">
           {% endif %}
           {% if request.user.is_superuser %}

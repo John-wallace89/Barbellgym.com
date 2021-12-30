@@ -94,7 +94,7 @@ class OrderLineItem(models.Model):
     product_size = models.CharField(
         max_length=2,
         null=True,
-        blank=True)  # XS, S, M, L, XL
+        blank=True)  # XS, S, M, L, XL, XXL, XXXL
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(
         max_digits=6,
