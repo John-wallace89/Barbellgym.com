@@ -144,7 +144,7 @@ there were no syntax errors.
 
 * [W3C CSS validator](https://jigsaw.w3.org/css-validator/validator) No errors were returned from the CSS validator
 
-* [JSHint](https://jshint.com/)
+* [JSHint](https://jshint.com/) 1 error against 2 pages 'Missing semi-colon'. Fix - added missing semi-colon.
 
 * [PEP8 online](http://pep8online.com/checkresult)
 
