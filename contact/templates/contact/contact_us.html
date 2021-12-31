@@ -11,16 +11,15 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay-products"></div>
-    <div class="container mb-2">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="title-class mb-2">Contact Us</h2>
-                <hr>
-            </div>
+<div class="overlay-products"></div>
+<div class="container mb-2">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="title-class mb-2">Contact Us</h2>
+            <hr>
         </div>
-
+    </div>
     <section class="container-fluid pb-3">
         <div class="row">
             <div class="col">
@@ -37,8 +36,9 @@
             <div class="col-12 col-md-3 col-sm-6 py-3">
                 <a href="https://www.instagram.com/barbell.gear/?hl=en" target="_blank" class="text-dark">
                     <h5 class="title-class">barbell gear</h5>
-                    <img src="{{ MEDIA_URL }}luna_misc_264145842405570_small.jpg" class="img-fluid rounded mx-auto d-block"
-                        alt="barbell gear instagram" style="object-fit: fill;">
+                    <img src="{{ MEDIA_URL }}luna_misc_264145842405570_small.jpg"
+                        class="img-fluid rounded mx-auto d-block" alt="barbell gear instagram"
+                        style="object-fit: fill;">
                 </a>
             </div>
             <div class="col-12 col-md-3 col-sm-6 py-3">
@@ -50,17 +50,17 @@
             </div>
             <div class="col-12 col-md-3 col-sm-6 py-3">
                 <a href="https://www.facebook.com/GavinSmithFit" target="_blank" class="text-dark">
-                <h5 class="title-class">Gavin Smith Facebook</h5>
-                <img src="{{ MEDIA_URL }}gavin_smith_fb.jpg" class="img-fluid rounded mx-auto d-block"
-                    alt="gavin smith pt facebook" style="object-fit: fill;">
+                    <h5 class="title-class">Gavin Smith Facebook</h5>
+                    <img src="{{ MEDIA_URL }}gavin_smith_fb.jpg" class="img-fluid rounded mx-auto d-block"
+                        alt="gavin smith pt facebook" style="object-fit: fill;">
                 </a>
             </div>
-            
+
             <div class="col-12 col-md-3 col-sm-6 py-3">
                 <a href="https://www.instagram.com/camwallacefitness/" target="_blank" class="text-dark">
-                <h5 class="title-class">Cam Wallace Fitness</h5>
-                <img src="{{ MEDIA_URL }}cam_logo_insta.jpg" class="img-fluid rounded mx-auto d-block"
-                    alt="cam wallace pt instagram" style="object-fit: fill; width: 250px;">
+                    <h5 class="title-class">Cam Wallace Fitness</h5>
+                    <img src="{{ MEDIA_URL }}cam_logo_insta.jpg" class="img-fluid rounded mx-auto d-block"
+                        alt="cam wallace pt instagram" style="object-fit: fill; width: 250px;">
                 </a>
             </div>
         </div>
@@ -75,18 +75,16 @@
         <div class="row">
             <div class="col-12">
                 <h4 class="title-class pb-3">Address</h4>
-                <address>
-                    <h5>
-                        The Barbell Gym (The Wolf Pit)<br>
-                        Factory Road<br>
-                        Bathgate<br>
-                        West Lothian<br>
-                        EH48 2RX<br>
-                    </h5>
-                </address>
+                <h5>
+                    The Barbell Gym (The Wolf Pit)<br>
+                    Factory Road<br>
+                    Bathgate<br>
+                    West Lothian<br>
+                    EH48 2RX<br>
+                </h5>
             </div>
         </div>
-            <!-- responsive class from https://blog.duda.co/responsive-google-maps-for-your-website-->
+        <!-- responsive class from https://blog.duda.co/responsive-google-maps-for-your-website-->
         <div class="row pb-5">
             <div class="col-12 map-responsive">
                 <iframe
@@ -95,13 +93,15 @@
                 </iframe>
             </div>
         </div>
-    </section> 
+    </section>
     <a class="btn btn-primary btn-dark" id="btn-to-top" href="#top" role="button">
         <i class="fas fa-chevron-up"></i>
     </a>
-{% endblock %}
+</div>
 
-{% block postloadjs %}
-{{ block.super }}
-    
-{% endblock %}
+    {% endblock %}
+
+    {% block postloadjs %}
+    {{ block.super }}
+
+    {% endblock %}

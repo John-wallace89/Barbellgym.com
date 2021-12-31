@@ -40,10 +40,10 @@
             </h5>
           {% endif %}
           <h3>Name: {{ p.name }}</h3>
-          <h4 class="py-3">Qualifications: {{ p.qualifications|linebreaks }}</h4>
+          <h4 class="py-3">Qualifications:</h4>{{ p.qualifications|linebreaks }}
         </div>
         <div class="col-12 col-sm-8 py-2 mx-auto">
-          <h4 class="py-4"><blockquote>{{ p.description }}</blockquote></h4>
+          <h4 class="py-4">{{ p.description }}</h4>
           <h4><strong>Price per session: £{{ p.price_per_session }}</strong></h4>
           {% if p.price_per_block_4 %}
             <h4><strong>Price per 4 week block: £{{ p.price_per_block_4 }}</strong></h4>
