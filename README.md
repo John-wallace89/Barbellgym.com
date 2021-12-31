@@ -287,7 +287,8 @@ there were no syntax errors.
 Please see all code bugs listed in the screenshot below:
   ![Bugs](media/screenshots/bugs.JPG)
 
-PLEASE NOTE: During working on this project, a db.json file was comitted to github with test user details from
+### PLEASE NOTE ###:
+During working on this project, a db.json file was comitted to github with test user details from
 Dev environment. None of this data was sent to the deployed app in production, and once the issue had been
 identified, the following steps were taken to mitigate:
   * The data that was identified in the file was removed from the dev environment.

@@ -31,6 +31,7 @@ h1 h2 h3 h4 h5 h6 {
 .title-class {
     text-transform: uppercase;
     text-align: center;
+    padding-top: 1rem;
 }
 
 /*------- Navigation -------*/
@@ -349,9 +350,5 @@ a {
 
     .home-btn {
         padding-top: 3rem;
-    }
-
-    .title-class {
-        padding-top: 2rem;
     }
 }
