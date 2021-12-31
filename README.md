@@ -13,12 +13,17 @@ Live project: [https://thebarbellgym.herokuapp.com/]
 * User Story 1 - As a customer, I land on the hompeage of the site and It's clear what the business is.
 * User Story 2 - As a customer I can navigate easily to any section of the site regardless of where I am or what device I am using.s
 * User Story 3 - As a customer I can easily access the Contact Us page and social media channels through the Footer of the page.
+  UPDATE - Was decided a footer was having too much of an impact on design, and access to socila links was provided through contact
+  us page.
 * User Story 4 - As the business owner, I provide customers with a clear and consistent UX in-keeping with the Barbell Gym brand.
 * User Story 5 - As a user, I can easily access the different products available from the Barbell shop.
 * User Story 6 - As a user, if applicable, I can choose the colour and size of my product before adding to the basket.
+  UPDATE - Colour options no longer required
 * User Story 7 - As a user, I am notified when I have successfully added a product to the basket and the quantity of products added is shown next to the basket icon.
 * User Story 8  - As a user I can submit my enquiry about a class or PT session.
+  UPDATE - Business decision to direct customers towards social channels
 * User Story 9 - As an Admin/Superuser I can edit or delete a product.
+  UPDATE - added functionality allows user to add/edit/delete a product, class or personal trainer
 * User Story 10 - As a customer, when I go to the basket page I can see the the products I have added to basket and overall total of my order.
 * User Story 11 - As a customer I can remove a specific item from my basket.
 * User Story 12 - As a customer I can adjust the quantity of specific items in my cart.
@@ -146,9 +151,129 @@ there were no syntax errors.
 
 * [JSHint](https://jshint.com/) 1 error against 2 pages 'Missing semi-colon'. Fix - added missing semi-colon.
 
-* [PEP8 online](http://pep8online.com/checkresult)
+* [PEP8 online](http://pep8online.com/checkresult) 1 error 'line too long >79' Fix - This has been left as changing
+  this would impact the readability/function of the code.
 
 ### Testing user stories ###
+
+* User Story 1 - As a customer, I land on the hompeage of the site and It's clear what the business is.
+  As you land on the homepage of the barbellgym site, there is a large logo and welcome message and the options on the site.
+
+  ![Dashboard screenshot](media/screenshots/user_story_1.JPG)
+  ![Dashboard screenshot mob](media/screenshots/user_story_1_mob.JPG)
+
+* User Story 2 - As a customer I can navigate easily to any section of the site regardless of where I am or what device I am using.
+  As a user there are clear links on the dashboard for desktop and mobile and dropdown menus for wuicker access to specific areas.
+
+  ![Navigation screenshot](media/screenshots/user_story_2.JPG)
+  ![Navigation screenshot](media/screenshots/user_story_2_mob.JPG)
+
+* User Story 3 - As a customer I can easily access the Contact Us page and social media channels through the Footer of the page.
+  SEE ABOVE - user story no longer valid.
+* User Story 4 - As the business owner, I provide customers with a clear and consistent UX in-keeping with the Barbell Gym brand.
+  Design is consistent throughout the site with the Barbell gym colours and logo.
+* User Story 5 - As a user, I can easily access the different products available from the Barbell shop.
+  By clicking on the Barbell shop nav item, I can access specific categories of products, all products and I can also search for products
+  using the search bar in the nav.
+
+  ![Product through nav screenshot](media/screenshots/user_story_5.JPG)
+  ![Product through search screenshot](media/screenshots/user_story_5_search.JPG)
+  ![Product through search mob screenshot](media/screenshots/user_story_5_mob.JPG)
+
+* User Story 6 (UPDATED) - As a user, if applicable, I can choose the size of my product before adding to the basket.
+  By clicking on the product I am taken to the product detail page where I can select size and quantity.
+
+  ![Size selector screenshot](media/screenshots/user_story_6.JPG)
+  ![Size selector mobile screenshot](media/screenshots/user_story_6_mob.JPG)
+
+* User Story 7 - As a user, I am notified when I have successfully added a product to the basket and the quantity of products added is shown next to the basket icon.
+  When I click on add to basket, i'm presented with a message with the details of what i've added to the basket and the option to proceed to checkout.
+
+  ![Add to basket notification](media/screenshots/user_story_7.JPG)
+  ![Add to basket notification tablet](media/screenshots/user_story_7_tablet.JPG)
+
+* User Story 8  - As a user I can submit my enquiry about a class or PT session.
+  See above - User Story Invalid
+* User Story 9 - As an Admin/Superuser I can add, edit or delete a product, class or PT.
+  As a superuser or admin, if i am logged in I can easily create, edit and delete classes, products or Pt's within the website.
+  ![Add class screenshot](media/screenshots/user_story_9_add_class.JPG)
+  ![Add product screenshot](media/screenshots/user_story_9_add_product.JPG)
+  ![Add pt screenshot](media/screenshots/user_story_9_add_pt.JPG)
+  ![Delete class screenshot](media/screenshots/user_story_9_delete_class.JPG)
+  ![Delete product screenshot](media/screenshots/user_story_9_delete_product.JPG)
+  ![Delete pt screenshot](media/screenshots/user_story_9_delete_pt.JPG)
+  ![Edit class screenshot](media/screenshots/user_story_9_edit_class.JPG)
+  ![Edit product screenshot](media/screenshots/user_story_9_edit_product.JPG)
+  ![Edit pt notification](media/screenshots/user_story_9_edit_pt.JPG)
+  ![Delete product success message](media/screenshots/user_story_9_delete_product_success_msg.JPG)
+  ![Edit product success message](media/screenshots/user_story_9_edit_product_success_msg.JPG)
+
+* User Story 10 - As a customer, when I go to the basket page I can see the the products I have added to basket and overall total of my order.
+  When I navigate to the basket page I can see the products in my basket - and i'm presented with a notification of how to collect my order
+  if I proceed.
+
+  ![Warning message at basket](media/screenshots/user_story_10.JPG)
+  ![Basket view](media/screenshots/user_story_10_basket.JPG)
+  ![Basket view mob](media/screenshots/user_story_10_basket_mob.JPG)
+
+* User Story 11 + 13 - As a customer I can remove a specific item from my basket.
+  As a user when I click remove below a specific item, it will remove the total number of that product
+  ![Remove from basket success msg](media/screenshots/user_story_11.JPG)
+
+* User Story 12 - As a customer I can adjust the quantity of specific items in my cart.
+  When i'm in the basket page, I can use the plus or minus for to alter the quantity of my product,
+  then click update which will update my basket.
+
+  ![Update from basket success msg](media/screenshots/user_story_12.JPG)
+
+* User Story 14 - As a customer, I can proceed to the checkout page from the basket review page.
+  As a customer I can click on secure checkout and I'm taken to the checkout page.
+
+  ![Checkout page screenshot](media/screenshots/user_story_14.JPG)
+  ![Checkout page screenshot mob](media/screenshots/user_story_14_mob.JPG)
+
+
+* User Story 15 - As a customer I can choose to save my payment details for next time I make an order.
+  As a customer, as long as I have created an account my details can be saved against my User Profile
+  for the next time I order, and they can be viewed in my profile.
+
+  ![Save details for payment next time](media/screenshots/user_story_14_mob.JPG)
+
+* User Story 16 - As a customer, through the contact us page I can access the business'  social media accounts and their location on google maps.
+  As a customer, when I land on the contact us page I can access all the social media platforms associated with the business and I'me also provided
+  a location of the gym.
+
+  ![Contact Us screenshot](media/screenshots/user_story_16.JPG)
+  ![Contact Us screenshot mob](media/screenshots/user_story_16_mob.JPG)
+
+* User Story 17 + 18 - As a user, I can sign into my account which gives me access to my order history and payment details.
+  Once I have registered and account and verified my email address for the site, I can log in and access my profile
+  ![Sign in screenshot mob](media/screenshots/user_story_17_mob.JPG)
+  ![Sign in screenshot](media/screenshots/user_story_17.JPG)
+  ![Sign up screenshot](media/screenshots/user_story_17_register.JPG)
+
+* User Story 19 - As a customer when I am signed in, I can access my order history, and see my previous orders.
+  Given I have signed in as a customer I can access my profile, whenre my delivery details are stored and they can
+  be updated and I can view my order history.
+
+  ![My profile screenshot](media/screenshots/user_story_19.JPG)
+  ![My profile screenshot mob](media/screenshots/user_story_19_mob.JPG)
+
+* Additional functionality - As an admin/superuser - I can mark products as out of stock to prevent customers from
+  buying them and providing customer experience.
+  ![Stock management screenshot mob](media/screenshots/oos_prod_page_mob.JPG)
+  ![Stock management screenshot](media/screenshots/oos_prod_detail_page.JPG)
+
+* Additional functionality - As a customer, I receive a confirmation email with my order details that match my order
+  confirmation from the site.
+
+  ![Order confirmation site screenshot](media/screenshots/order_confirmed.JPG)
+  ![Order confirmation email screenshot](media/screenshots/order_confirmation_email.JPG)
+
+* Additional functionality - As non admin/superuser, i don't have access to edit products either from the nav
+  or by manipulating the url.
+  ![Restricted access nav screenshot](media/screenshots/non_superuser_access_profile.JPG)
+  ![Permissions error screenshot](media/screenshots/permissions_error.JPG)
 
 
 
