@@ -284,21 +284,155 @@ there were no syntax errors.
 
 * Bugs:
 
+Please see all code bugs listed in the screenshot below:
+  ![Bugs](media/screenshots/bugs.JPG)
+
+PLEASE NOTE: During working on this project, a db.json file was comitted to github with test user details from
+Dev environment. None of this data was sent to the deployed app in production, and once the issue had been
+identified, the following steps were taken to mitigate:
+  * The data that was identified in the file was removed from the dev environment.
+  * The db.json file was deleted as it wasn't being used
+  * Production data (users, products, classes) were created in the admin console in production, manually.
+
 * Potential enhancements:
+
+    i. Ideally there should be and order management system for the superuser, using a boolean object,
+      when the order is fulfilled (true) an email is sent to the customer to let them know the order is ready
+      to be collected
+    ii. Additional defensive programming to prevent customers from adding out of stock products to their basket. 
 
 <h2 style="text-align: center">Deployment</h2>
 
+### Requirements ###
 
+
+* Python3
+* GitHub account
+* Heroku account
+* Gitpod or an IDE of your choice
+* Stripe account
+* AWS account
+* Email provider
+
+### GitHub Pages ###
+The project was created through GitHub using the following steps...
+
+#### Log in to GitHub and locate the GitHub Repository ####
+
+* Going to [github.com](https://github.com)
+* Clicking on the 'New' button in repositories section
+* Selecting the CI template provided by Code Institute [template here](https://github.com/Code-Institute-Org/gitpod-full-template)
+* Creating a name for my new repo and clicking on the 'Create Repository' button at the bottom of the screen.
+* Once directed to my new repo, I clicked on the 'Gitpod' button which created my workspace
+
+### Deployment to Heroku
+
+**Create application:**
+* Navigate to Heroku.com and login.
+* Click on the new button.
+* Select create new app.
+* Enter the app name - this should be the same as the repo name to reduce complexity.
+* Select region.
+
+**Connect to Github Repo:**
+
+* Click the deploy tab and select GitHub - Connect to GitHub.
+* A prompt to find a github repository to connect to will then be displayed.
+* Enter the repo name for your project in Github and click search.
+* Once the repo has been found, click the connect button.
+
+**Set environment variables:**
+
+Go to the 'Settings' section at the far right of the menu and click 'Reveal Config Vars' button,
+for my project I added the following:
+
+KEY	VALUE
+1. AWS_ACCESS_KEY_ID	
+2. AWS_SECRET_ACCESS_KEY	
+3. DATABASE_URL	
+4. EMAIL_HOST_PASS	
+5. EMAIL_HOST_USER	
+6. SECRET_KEY_MS4	
+7. STRIPE_PUBLIC_KEY	
+8. STRIPE_SECRET_KEY	
+9. STRIPE_WH_SECRET	
+10. USE_AWS	
+11. CSRF_COOKIE_SECURE 
+
+**Enable automatic deployment:**
+* Go to 'Deploy' section
+* In the 'Automatic Deploys' section, I chose the main branch (choose the branch you want to deploy from) then click 'Enable Automation Deploys'.
+
+**Static & Media Files**
+To host static and media files you will need an AWS S3 Bucket. You will need an account and create an S3 bucket. From here set up a group,
+a policy and user in the IAM environment. For more information, please look [here](https://aws.amazon.com/s3/)
+**Forking the GitHub Repository**
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+* Log in to GitHub and locate the GitHub Repository**
+
+* At the top of the repository section just above the "Settings" button on the menu, click the "Fork" button.
+  The original repository in your GitHub account should now have duplicated.
+
+**Run on Local Environment**
+
+* Set up the environment variables either in env.py file or in gitpod account settings
+  (ensure to add env.py to gitignore file):
+
+* Import os
+  os.environ("SECRET_KEY", "Added by developer")
+  os.environ("STRIPE_PUBLIC_KEY", "Added by developer")
+  os.environ("STRIPE_SECRET_KEY", "Added by developer")
+  os.environ("STRIPE_WH_SECRET", "Added by developer")
+  os.environ("DATABASE_URL", "Added by developer")
+
+* Next, run migrations to create the database. Do this by running the command 'python3 manage.py makemigrations'
+  followed by python3 manage.py migrate (use makemigrations --dry-run and migrate --plan to confirm what is being migrated).
+
+* Create a superuser to have access to the admin panel. python3 manage.py createsuperuser
+
+* Now run the app locally using python3 manage.py runserver
+
+**Making a Local Clone**
+
+* Log in to GitHub and locate the GitHub repository, under the repository name, click "clone or download".
+* To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+* Open Git Bash
+* Change the current working directory to the location where you want the cloned directory to be made.
+* Type git clone, and then paste the URL you copied in Step 2.
+   * $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+* Press Enter. Your local clone will be created.
+   * $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+
+Once the project has been loaded into an IDE of choice, run the following command in the shell to install all the required packages:
+> pip install -r requirements.txt
 
 
 ### Credits
 
+
 ### Code ###
+* Code has been credited throughout the project, Code institute
+  Boutique Ado project helped support the ecommerce side of the site.
+  Stackoverflow was used alot for answers on bugs.
 
 
 ### Content ###
-
+* Content was inspired by Gymshark and MyProtein websites
+  Content is from the Barbell Gym, locally run business in West Lothian.
 
 #### Image credits ####
+* 'No image' image was taken from Boutique ado project
+* rawpixel was used for background overlay
+* All images and logos were provided by the barbell gym
 
 ### Acknowledgements ###
+Huge thanks to Aaron Sinnot, my mentor and the slack community
+from helping me through this project. Massive thanks to Gaving Smith
+at the Barbell Gym for trusting me with his brand.
