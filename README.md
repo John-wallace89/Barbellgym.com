@@ -142,7 +142,7 @@ there were no syntax errors.
     Fix - removed surrounding tags from templating logic that includes 'linebreaks' as this
     automatically generates paragraph tags.
 
-* [W3C CSS validator](https://jigsaw.w3.org/css-validator/validator)
+* [W3C CSS validator](https://jigsaw.w3.org/css-validator/validator) No errors were returned from the CSS validator
 
 * [JSHint](https://jshint.com/)
 
