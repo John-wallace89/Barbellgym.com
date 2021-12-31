@@ -350,4 +350,8 @@ a {
     .home-btn {
         padding-top: 3rem;
     }
+
+    .title-class {
+        padding-top: 2rem;
+    }
 }

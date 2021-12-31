@@ -284,7 +284,6 @@ there were no syntax errors.
 
 * Bugs:
 
-
 * Potential enhancements:
 
 <h2 style="text-align: center">Deployment</h2>
